@@ -23,4 +23,8 @@ public interface UserService {
 	ArrayList<String> findManagerNameByUID(String userId);
 	
 	User authenticate(String uname, String pwd);
+	
+	ArrayList<User> getUserStudentRole();
+	
+	//ArrayList<String> getStudentEmail();
 }

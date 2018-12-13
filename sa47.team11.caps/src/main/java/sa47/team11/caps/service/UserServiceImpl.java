@@ -70,4 +70,15 @@ public class UserServiceImpl implements UserService {
 		return u;
 	}
 	
+	@Override
+	public ArrayList<User> getUserStudentRole(){
+		ArrayList<User> u = (ArrayList<User>)userRepository.getStudent();
+		return u;
+	}
+	
+	
+////	@Override
+////	public ArrayList<String> getStudentEmail(){
+////		//return null;
+//	}
 }

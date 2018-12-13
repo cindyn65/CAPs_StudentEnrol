@@ -24,19 +24,25 @@ public class StudentEnrolment implements Serializable {
 	@Column(name="DATE_REGISTERED")
 	private Date dateRegistered;
 
-	private int score;
+	private Integer score;
+	
+/*	@Column(name="STUDENTID",nullable=false)
+	private Integer studentid;
+	
+	@Column(name="COURSEID",nullable=false)
+	private Integer courseid;*/
 
 	@Column(name="STATUS_ENROLL")
 	private String statusEnroll;
 
 	//bi-directional many-to-one association to Course
 	@ManyToOne
-	@JoinColumn(name="COURSEID")
+	@JoinColumn(name="COURSEID",insertable=false,updatable=false)
 	private Course course;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
-	@JoinColumn(name="STUDENTID")
+	@JoinColumn(name="STUDENTID",insertable=false,updatable=false)
 	private User user;
 
 	public StudentEnrolment() {
@@ -58,7 +64,7 @@ public class StudentEnrolment implements Serializable {
 		this.dateRegistered = dateRegistered;
 	}
 
-	public int getScore() {
+	public Integer getScore() {
 		return this.score;
 	}
 
@@ -90,4 +96,28 @@ public class StudentEnrolment implements Serializable {
 		this.user = user;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+/*
+	public Integer getStudentid() {
+		return studentid;
+	}
+
+	public Integer getCourseid() {
+		return courseid;
+	}*/
+
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+
+/*	public void setStudentid(Integer studentid) {
+		this.studentid = studentid;
+	}
+
+	public void setCourseid(Integer courseid) {
+		this.courseid = courseid;
+	}*/
+	
 }
